@@ -23,7 +23,6 @@ class PredictionResult(BaseModel):
     fraud_probability: float
     is_fraud: bool
     threshold: float
-    top_features: Dict[str, float]
     risk_level: str
 
 class BatchPredictionResult(BaseModel):

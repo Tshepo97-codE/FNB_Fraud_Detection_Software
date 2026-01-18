@@ -384,12 +384,12 @@ with tab3:
         else:
             st.session_state.df = pd.read_excel(uploaded_file)
         
-        st.markdown(f"**Loaded {len(df)} transactions**")
-        st.dataframe(df.head(), use_container_width=True)
+        st.markdown(f"**Loaded {len(st.session_state.df)} transactions**")
+        st.dataframe(st.session_state.df.head(), use_container_width=True)
         
         # Convert to API format
         transactions = []
-        for idx, row in df.iterrows():
+        for idx, row in st.session_state.df.iterrows():
             now_iso = datetime.now().isoformat()
 
             transaction = {

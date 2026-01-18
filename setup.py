@@ -8,6 +8,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         "flask>=2.3.0",
+        "flask-cors>=4.0.0",
         "streamlit>=1.28.0",
         "pandas>=2.0.0",
         "numpy>=1.24.0",
