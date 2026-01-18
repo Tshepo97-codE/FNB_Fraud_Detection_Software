@@ -1,5 +1,6 @@
 """Basic import tests to ensure modules can be loaded"""
 import sys
+import pytest
 from pathlib import Path
 
 # Add parent directory to path
