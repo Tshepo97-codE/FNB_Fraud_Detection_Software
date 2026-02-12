@@ -1,9 +1,9 @@
-From python:3.9-slim
+FROM python:3.9-slim
 
 WORKDIR /app
 
 # Copy requirements first for caching
-Copy api/requirements.txt .
+COPY api/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
