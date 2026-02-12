@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: fraud-detection-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+    restart: unless-stopped
+
+  streamlit:
+    image: python:3.9-slim
+    container_name: fraud-detection-ui
+    working_dir: /app
+    command: >
+      sh -c "pip install streamlit pandas requests &&
+             streamlit run streamlit/app_streamlit.py --server.port=8501 --server.address=0.0.0.0"
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./streamlit:/app/streamlit
+    depends_on:
+      - api
+    restart: unless-stopped
