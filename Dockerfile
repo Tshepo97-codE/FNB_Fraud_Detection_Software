@@ -7,7 +7,7 @@ COPY api/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # EXPLICITLY INSTALL UVICORN
-RUN pip install uvicorn[standard]
+RUN pip install gunicorn
 
 # Copy application code
 COPY api/ ./api/
@@ -19,5 +19,5 @@ ENV PYTHONPATH="${PYTHONPATH}:/app"
 # Expose port
 EXPOSE 8000
 
-# Run the API
-CMD ["uvicorn", "api.app:app", "--host", "0.0.0.0", "--port", "8000"] 
+# Run Flask with gunicorn (WSGI)
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "4", "api.app:app"] 
