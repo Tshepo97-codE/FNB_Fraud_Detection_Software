@@ -23,8 +23,8 @@ CORS(app)  # Enable CORS for all routes
 
 # ========== CONFIGURATION ==========
 BASE_DIR = Path(__file__).parent.parent  # Go up one level from api folder
-MODEL_PATH = BASE_DIR / "models" / "rf_sm_fraud.pkl"
-FEATURE_NAMES_PATH = BASE_DIR / "models" / "feature_names.json"
+MODEL_PATH = BASE_DIR / "notebooks" / "models" / "rf_sm_fraud.pkl"
+FEATURE_NAMES_PATH = BASE_DIR / "notebooks" / "models" / "feature_names.json"
 
 # Log paths for debugging
 logger.info(f"Base Directory: {BASE_DIR}")

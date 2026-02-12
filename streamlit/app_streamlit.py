@@ -68,7 +68,7 @@ with st.sidebar:
     # Api endpoint
     api_endpoint = st.text_input(
         "API Endpoint",
-        value="http://localhost:8000",
+        value="http://api:8000",
         help="URL of the FastAPI backend"
     )
     
