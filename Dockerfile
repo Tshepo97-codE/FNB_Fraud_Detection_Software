@@ -11,7 +11,7 @@ COPY api/ ./api/
 COPY models/ ./models/
 
 # Set Python path
-ENV PYTHONPATH="${PYTHONPATH:/app"
+ENV PYTHONPATH="${PYTHONPATH:}/app"
 
 # Expose port
 EXPOSE 8000
